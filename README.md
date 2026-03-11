@@ -1,18 +1,18 @@
 # Docker Flask API
 
-	A simple Flask API containerized with Docker and deployed on an Ubuntu EC2 instance.  
-	This project demonstrates basic DevOps practices including containerization, API deployment, and cloud testing.
+A simple Flask API containerized with Docker and deployed on an Ubuntu EC2 instance.  
+This project demonstrates basic DevOps practices including containerization, API deployment, and cloud testing.
 
 ---
 
 ## Project Structure
 
-	docker-flask-api
-	│
-	├── app.py
-	├── requirements.txt
-	├── Dockerfile
-	└── README.md
+docker-flask-api
+│
+├── app.py
+├── requirements.txt
+├── Dockerfile
+└── README.md
 
 ---
 
