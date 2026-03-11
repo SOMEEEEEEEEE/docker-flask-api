@@ -8,6 +8,7 @@ This project demonstrates basic DevOps practices including containerization, API
 ## Project Structure
 
   docker-flask-api
+  
   │
   ├── app.py
   ├── requirements.txt
