@@ -8,6 +8,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 5  # Prevent job from hanging indefinitely
 
     steps:
 
@@ -20,9 +21,16 @@ jobs:
     # Run container test with cleanup
     - name: Run container test
       run: |
+        echo "Starting container..."
         container_id=$(docker run -d -p 5000:5000 flask-api-test)
+
+        echo "Waiting for application to start..."
         sleep 5
+
+        echo "Sending HTTP request to test endpoint..."
         curl localhost:5000
+
         # Stop and remove container after test
+        echo "Stopping and removing container..."
         docker stop $container_id
         docker rm $container_id
