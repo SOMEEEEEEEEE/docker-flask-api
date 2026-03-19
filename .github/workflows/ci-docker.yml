@@ -60,7 +60,11 @@ jobs:
           # Pull latest image from Docker Hub
           docker pull ${{ secrets.DOCKER_USERNAME }}/flask-api-test:latest
 
-          # Stop old container if exists
+          # Stop and remove ALL containers using port 5000
+          docker ps -q --filter "publish=5000" | xargs -r docker stop
+          docker ps -aq --filter "publish=5000" | xargs -r docker rm
+
+          # Safe Fallback: Remove old container if exists
           docker stop flask-api || true
           docker rm flask-api || true
 
