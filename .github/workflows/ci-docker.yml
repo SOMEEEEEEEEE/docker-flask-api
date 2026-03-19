@@ -27,8 +27,9 @@ jobs:
         echo "Waiting for application to start..."
         sleep 5
 
+        # Fail pipeline if container test fails
         echo "Sending HTTP request to test endpoint..."
-        curl localhost:5000
+        curl -f localhost:5000
 
         # Stop and remove container after test
         echo "Stopping and removing container..."
